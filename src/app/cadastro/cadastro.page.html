@@ -1,8 +1,24 @@
+
+
+
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Agendar</ion-title>
+
+    
+      <ion-buttons slot="start">
+        <ion-back-button     routerLink="/home"    default-href="#"></ion-back-button>
+          </ion-buttons>
+
+
+
+    <p align="center">Agendar</p>
+   <!-- <ion-title>Agendar</ion-title> -->
   </ion-toolbar>
 </ion-header>
+
+
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -26,4 +42,8 @@
     </ion-item>
   </ion-list>
   <ion-button expand="full" (click)="salvar()">Salvar</ion-button>
+
+
+  
+
 </ion-content>
