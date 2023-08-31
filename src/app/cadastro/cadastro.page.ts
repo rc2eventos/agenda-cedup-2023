@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,13 +11,22 @@ export class CadastroPage implements OnInit {
    public descricao:string = '';
    public datahora:string = '';
 
-  constructor() { }
+  constructor(
+    public local_storage:LocalStorageService
+    
+  ) { }
 
   ngOnInit() {
   }
  
-  salvar() { //void opcional//
-    alert('A matéria digitada foi' + this.materia);
+  salvar() { 
+   let compromisso = {
+      materia:this.materia,
+      descricao:this.descricao
+   };
+
+    this.local_storage.salvar('compromisso', compromisso);
+    alert('Salvo com sucesso!');
      
   }
 
