@@ -12,11 +12,12 @@ export class CadastroPage implements OnInit {
    public datahora:string = '';
 
   constructor(
-    public local_storage:LocalStorageService
+    public localstorage_service:LocalStorageService
     
   ) { }
 
   ngOnInit() {
+    console.log(this.localstorage_service.get ('compromisso'));
   }
  
   salvar() { 
@@ -25,7 +26,7 @@ export class CadastroPage implements OnInit {
       descricao:this.descricao
    };
 
-    this.local_storage.salvar('compromisso', compromisso);
+    this.localstorage_service.post('compromisso', compromisso);
     alert('Salvo com sucesso!');
      
   }
