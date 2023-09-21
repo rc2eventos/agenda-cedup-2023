@@ -1,24 +1,17 @@
 
 
-
-
 <ion-header [translucent]="true">
   <ion-toolbar>
-
     
       <ion-buttons slot="start">
         <ion-back-button     routerLink="/home"    default-href="#"></ion-back-button>
           </ion-buttons>
 
 
-
     <p align="center">Agendar</p>
    <!-- <ion-title>Agendar</ion-title> -->
   </ion-toolbar>
 </ion-header>
-
-
-
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -39,12 +32,9 @@
     </ion-item>
     <ion-item>
       <ion-label>Data e Hora</ion-label>
-      <ion-input></ion-input>
+     <ion-datetime [showDefaultButtons]="true" [(ngModel)]="datahora"></ion-datetime>
     </ion-item>
   </ion-list>
   <ion-button expand="full" (click)="salvar()">Salvar</ion-button>
-
-
-  
-
+ 
 </ion-content>
