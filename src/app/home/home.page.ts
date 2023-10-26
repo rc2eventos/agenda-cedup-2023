@@ -11,12 +11,17 @@ export class HomePage {
   constructor(
     public localstorage_service:LocalStorageService
   ) {
+      
+  }
+  ionViewWillEnter(){
     this.compromissos = this.localstorage_service.get('compromisso');
   }
 
   excluir(indice:number){
     this.compromissos.splice(indice,1);
+    this.localstorage_service.del('compromisso',indice);
   }
+
  getHora(data:string){
 
   let hora = data.split("T")[1];
@@ -31,6 +36,9 @@ export class HomePage {
   let mes = dt.split("-") [1];
   let ano = dt.split("-") [0];
   return dia + "/" + mes + "/" + ano;
+  
+
+
   
  }
 
